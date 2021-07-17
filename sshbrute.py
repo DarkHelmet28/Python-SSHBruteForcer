@@ -1,4 +1,4 @@
-import paramiko, sys, os, socket, termcolor, threading, time
+import paramiko, sys, os, termcolor, threading, time
 import argparse as arg
 
 stop_flag = 0
